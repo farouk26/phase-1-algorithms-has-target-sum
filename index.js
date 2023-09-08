@@ -1,15 +1,24 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        return true;
+      }
+    } 
+  } 
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
 */
-
+// using forloop or linear search is expressed as O(n)
 /* 
   Add your pseudocode here
 */
-
+// for each element inside the array = the target value , return true 
+//else return false
 /*
   Add written explanation of your solution here
 */
@@ -24,6 +33,14 @@ if (require.main === module) {
 
   console.log("Expecting: true");
   console.log("=>", hasTargetSum([22, 19, 4, 6, 30], 25));
+
+  console.log("");
+  console.log("Expecting: true");
+  console.log("=>", hasTargetSum([1, 2, 3, 4], 5));
+
+  console.log("");
+  console.log("Expecting: true");
+  console.log("=>", hasTargetSum([4], 4));
 
   console.log("");
 
